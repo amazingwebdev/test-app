@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="content-wrapper">
+    <h2>The Mentalist, Seasons 1 - 7 (2008 - 20015)</h2>
+
+    <div class="book-list-wrapper">
+      <div class="book-list-content">
+        <div class="book-item" *ngFor="let book of books; let i = index" (click)="selectBook(book)" [class.active]="book?.active">
+          <img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png">
+        </div>
+      </div>
+      <div class="book-list-footer">
+        <p>{{ comments.length }} comments</p>
+        <button class="btn btn-primary" *ngIf="!showComment" (click)="showComment = true">Add Comments</button>
+      </div>
+      <div class="book-list-input" *ngIf="showComment">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <textarea class="form-control" [(ngModel)]="comment" name="comment"></textarea>
+          </div>
+          <div class="btn-wrapper">
+            <button type="button" class="btn btn-danger" (click)="showComment = false">Cancel</button>
+            <button class="btn btn-success">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="comments-wrapper">
+      <div class="comment-item" *ngFor="let comment of comments">
+        <div class="comment-profile-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw_k7pqcUe9P3j8DUUDpzI3NjRyvgF_e0RxaslK2GvO7oLlex3RQ">
+        </div>
+        <div class="comment-content">
+          <p class="user-info">{{ comment.name }} <span>{{ comment.added | date : 'MM/dd/yyyy, HH:mm' }}</span></p>
+          <p class="comment">{{ comment.comment }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

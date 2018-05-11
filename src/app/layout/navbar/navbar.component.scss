@@ -1,0 +1,29 @@
+nav {
+  .navbar-brand {
+    margin-right: 40px;
+    font-weight: bold;
+
+    span {
+      color: deepskyblue;
+    }
+  }
+
+  ul li a {
+    color: black;
+    margin: 0 5px;
+  }
+
+  ul li:first-child {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 10px;
+      height: 10px;
+    }
+
+    a {
+      margin-left: -2px;
+    }
+  }
+}

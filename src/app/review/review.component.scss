@@ -1,0 +1,103 @@
+.container {
+  background-color: white;
+}
+
+.content-wrapper {
+  padding: 2.5rem 0;
+  h2 {
+    font-size: 1.35rem;
+    margin: 1rem 0;
+  }
+}
+
+.book-list-content {
+  display: flex;
+  padding: .5rem 0 2rem;
+  overflow-x: auto;
+}
+
+.book-list-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  p {
+    color: lightgrey;
+    margin: 0;
+  }
+  button {
+    border-radius: 25px;
+    background-color: deepskyblue;
+    color: white;
+    border: none;
+    font-size: 14px;
+  }
+}
+
+.book-list-input {
+  display: flex;
+  flex-direction: column;
+  .btn-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    button {
+      width: 100px;
+      border-radius: 25px;
+      font-size: 14px;
+      &:first-child {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+
+.book-item {
+  flex: 0 0 150px;
+  height: 200px;
+  display: block;
+  box-shadow: 2px 3px 14px grey;
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+  &.active {
+    box-shadow: 8px 6px 14px 5px grey;
+  }
+}
+
+.comments-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  .comment-item {
+    display: flex;
+    margin: 2rem;
+    .comment-profile-image {
+      flex: 0 0 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+      img {
+        width: 80px;
+      }
+    }
+    .comment-content {
+      .user-info {
+        color: deepskyblue;
+        span {
+          font-size: 12px;
+          color: lightgrey;
+          margin-left: .7rem;
+        }
+      }
+      .comment {
+        font-size: 14px;
+        color: lightgrey;
+      }
+    }
+  }
+}
